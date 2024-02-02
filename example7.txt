@@ -1,0 +1,6 @@
+var brr[20][20][20]; 
+begin 
+print(&*(*(*(brr+2)+1)+3)-brr);
+print(&*(*(1+*(2+brr))+3)-brr);
+print(&brr[2][1][3]-brr);
+end.

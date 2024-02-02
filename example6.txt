@@ -1,0 +1,26 @@
+var i;  // 主程序main中声明的变量i 
+procedure p1; //嵌套声明在主程序main中 
+	var i ;  //子程序 p1 中声明的局部变量i 
+	procedure p2; //嵌套声明在过程p1中 
+		var i;  
+		// 子程序p2中声明的局部变量i 
+		procedure p3; //嵌套声明在过程p2中 
+			var i;  
+			// 子程序p3中声明的局部变量i 
+			begin //子程序p3的过程体 
+			i := 3; 
+			print( ::i, p1::i, p2::i, i ); // 输出 0 1 2 3 
+			print( ::i, ::p1::i, ::p1::p2::i, ::p1::p2::p3::i ); // 输出 0 1 2 3 
+			end; 
+		begin // 子程序p2的过程体 
+		i := 2; 
+		call p3;   
+		end; 
+	begin //子程序p1的过程体 
+	i := 1; 
+	call p2; 
+	end; 
+begin // 主程序main的过程体 
+i := 0; 
+call p1; 
+end. 

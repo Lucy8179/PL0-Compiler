@@ -1,0 +1,47 @@
+var  i,j,a[3][3],b[3][3];
+begin
+	i:=0;
+	while i<3 do
+	begin
+		j:=0;
+		while j<3 do
+		begin
+			a[i][j]:=i+1+j+1;
+			j:= j+1;
+		end;
+		i:= i+1;
+	end;
+	print(a[0][0], a[0][1], a[0][2]);
+	print(a[1][0], a[1][1], a[1][2]);
+	print(a[2][0], a[2][1], a[2][2]);
+	print();
+	i:=0;
+	while i<3 do
+	begin
+		j:=0;
+		while j<3 do
+		begin
+			b[i][j]:=(i+1)*(j+1);
+			j:= j+1;
+		end;
+		i:= i+1;
+	end;
+	print(b[0][0], b[0][1], b[0][2]);
+	print(b[1][0], b[1][1], b[1][2]);
+	print(b[2][0], b[2][1], b[2][2]);
+	print();
+	i:=0;
+	while i<3 do
+	begin
+		j:=0;
+		while j<3 do
+		begin
+			a[i][j]:=a[i][j]+b[i][j];
+			j:= j+1;
+		end;
+		i:= i+1;
+	end;
+	print(a[0][0], a[0][1], a[0][2]);
+	print(a[1][0], a[1][1], a[1][2]);
+	print(a[2][0], a[2][1], a[2][2]);
+end.
